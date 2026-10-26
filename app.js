@@ -36,118 +36,131 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Interactive Asistan Simulator Data & Intelligent Logic
   const scenarios = {
     clinic: {
-      name: 'AutoNEX Klinik & Güzellik Asistanı',
+      name: 'AutoNEX Sağlık, Klinik & Estetik',
       avatar: '✨',
-      sector: 'Güzellik, Klinik & Estetik',
-      summary: 'lazer epilasyon, medikal cilt bakımı, bölgesel incelme ve ücretsiz uzman analiz randevuları',
-      welcome: 'Merhaba! Kliniğimize hoş geldiniz. 🌸 Lazer epilasyon, medikal cilt bakımı, bölgesel incelme ve kişiye özel seans planlarımız hakkında 7/24 bilgi alabilir veya ücretsiz analiz randevunuzu hemen oluşturabilirsiniz. Size nasıl yardımcı olabilirim?',
+      sector: 'Sağlık, Klinik, Diş & Medikal Estetik',
+      summary: 'lazer epilasyon, medikal cilt bakımı, estetik diş hekimliği, hekim muayeneleri ve ücretsiz analiz randevuları',
+      welcome: 'Merhaba! Kliniğimize hoş geldiniz. 🌸 Lazer epilasyon, medikal cilt bakımı, estetik diş hekimliği (gülüş tasarımı, zirkonyum) ve hekim muayene randevularımız hakkında 7/24 bilgi alabilir veya ücretsiz uzman analiz randevunuzu hemen oluşturabilirsiniz. Size nasıl yardımcı olabilirim?',
       prompts: [
         'Cilt bakımı ne kadar sürüyor?',
         'Fiyatlar ve seanslar nasıl belirleniyor?',
-        'Cumartesi 14:00 randevu var mı?',
-        'Ağrısız mı, acı hisseder miyim?',
-        'Kliniğinizin konumu nerede?'
+        'Diş beyazlatma ve zirkonyum kaplama var mı?',
+        'Doktor muayenesi randevusu alabilir miyim?',
+        'Ağrısız mı, acı hisseder miyim?'
       ],
       topics: {
-        price: 'Lazer epilasyon ve cilt bakımı fiyatlarımız; uygulama yapılacak bölgeye, seans sayısına ve danışanımızın cilt/kıl yapısına göre tamamen kişiye özel olarak belirlenmektedir 🌸 Merkezimizde seans başı ödeme kolaylığı ve dönemsel çok avantajlı paket seçeneklerimiz bulunmaktadır. Cilt ve kıl yapınızı yakından inceleyip size en uygun seans planını çıkarabilmemiz için merkezimizde tamamen ÜCRETSİZ profesyonel cilt ve kıl analizi yapıyoruz. Dilerseniz siz kahvemizi yudumlarken uzmanımızla cildinize birlikte bakalım ☕ Size uygun bir gün için ön görüşme randevusu oluşturalım mı?',
+        price: 'Lazer epilasyon ve medikal bakım fiyatlarımız; uygulama yapılacak bölgeye, seans sayısına ve danışanımızın cilt/kıl yapısına göre tamamen kişiye özel olarak belirlenmektedir 🌸 Merkezimizde seans başı ödeme kolaylığı ve dönemsel çok avantajlı paket seçeneklerimiz bulunmaktadır. Cilt ve kıl yapınızı yakından inceleyip size en uygun seans planını çıkarabilmemiz için merkezimizde tamamen ÜCRETSİZ profesyonel cilt ve kıl analizi yapıyoruz. Dilerseniz siz kahvemizi yudumlarken uzmanımızla cildinize birlikte bakalım ☕ Size uygun bir gün için ön görüşme randevusu oluşturalım mı?',
         appointment: 'Cumartesi günü saat 14:00 seansımız şu an müsait görünüyor! 📅 Adınız Soyadınız ve telefon numaranızı iletirseniz randevunuzu hemen takvime işleyip onay bildiriminizi iletiyorum.',
         skin: 'Medikal Hydrafacial cilt bakımı protokolümüz ortalama 50-60 dakika sürmektedir 🌸 Vakumlu derin gözenek arındırma, siyah nokta temizliği, peeling ve cildin ihtiyacına özel hyaluronik asit/vitamin serum yüklemesi içerir. Seans sonunda cildiniz anında neme doymuş, taze ve ışıl ışıl bir görünüm kazanır ✨ Cilt tipinize en uygun protokolü belirlemek için merkezimizde ücretsiz cilt analizi yapmaktayız. Size uygun bir gün için uzmanımızla analiz randevusu planlayalım mı?',
         skin_price: 'Medikal cilt bakımı protokollerimizde fiyatlandırma; cildin analiz sonucundaki ihtiyacına (derin gözenek temizliği, leke protokolü veya yoğun nem takviyesi) ve seans planına göre kişiye özel belirlenmektedir 🌸 Merkezimizde seans başı ödeme kolaylığı ve avantajlı kür seçeneklerimiz mevcuttur. Cildinizin neye ihtiyacı olduğunu netleştirmek için merkezimizde ücretsiz profesyonel cilt analizi yapmaktayız. Uzmanımızla cildinize birlikte bakmamız için randevu oluşturalım mı? ☕',
         laser_duration: 'Tüm vücut buz lazer seansımız ortalama 35-45 dakika sürmektedir 🌸 Kıl yapısına bağlı olarak ortalama 6-8 seansta %85-90 kalıcı pürüzsüzlük sağlanır. Kıl yapınızı inceleyip 1 dakikalık ücretsiz deneme atışı yapmak için randevu oluşturalım mı?',
         pain: 'Kullandığımız yeni nesil -10°C safir temaslı soğutmalı buz başlık teknolojisi sayesinde atışlar masaj konforunda ve sıfıra yakın bir hisle gerçekleşir 🌸 Cildinizin konforunu görmeniz için işlem öncesinde ücretsiz 1 dakikalık deneme atışı yapabiliyoruz.',
+        dental: 'Kliniğimiz bünyesinde estetik diş hekimliği, gülüş tasarımı, zirkonyum ve porselen kaplama, diş beyazlatma (bleaching) ve şeffaf plak (telsiz ortodonti) tedavileri uzman hekimlerimiz tarafından yürütülmektedir 🦷 Panoramik röntgen ve detaylı hekim muayenesi sonrasında kişiye özel tedavi planı ve bütçesi oluşturulur. Muayene randevusu planlamak ister misiniz?',
+        doctor: 'Kliniğimizde alanında uzman hekimlerimiz ile poliklinik muayene ve danışmanlık hizmeti sunulmaktadır 🩺 İlgilendiğiniz branş veya şikayetiniz hakkında ön bilgi verirseniz, ilgili doktorumuzun en erken müsait randevu saatini sizin için sorgulayabilirim.',
         location: 'Kliniğimiz merkezi lokasyonda, ana cadde üzerinde ve metro/metrobüs durağına yalnızca 3 dakika yürüme mesafesindedir 📍 Otoparkımız mevcuttur. Dilerseniz WhatsApp üzerinden canlı konum gönderebilirim.',
         hours: 'Kliniğimiz Pazartesi - Cumartesi günleri 09:30 - 19:30 saatleri arasında açıktır. Ben ise 7/24 aktif olduğum için randevunuzu dilediğiniz an takvime işleyebilirim.'
+      }
+    },
+    service: {
+      name: 'AutoNEX Yerel Hizmet & Profesyonel Temizlik',
+      avatar: '🧼',
+      sector: 'Yerel Hizmet, Temizlik & Koltuk Yıkama',
+      summary: 'ev/ofis temizliği, yerinde buharlı koltuk/yatak yıkama, sabit fiyatlar ve mobil servis rezervasyonu',
+      welcome: 'Merhabalar efendim! Profesyonel Temizlik & Yerel Hizmet hattına hoş geldiniz. 🧼 Detaylı ev/ofis temizliği, Karcher buharlı koltuk ve yatak yıkama hizmetlerimiz için net sabit fiyat teklifi alabilir ve randevunuzu hemen oluşturabilirsiniz. Size nasıl yardımcı olabilirim?',
+      prompts: [
+        '3+1 ev temizliği ne kadar?',
+        'Koltuk yıkama fiyatları nedir?',
+        'L koltuk yıkama ne kadar?',
+        'Koltuk kaç saatte kurur?',
+        'Deterjanları siz mi getiriyorsunuz?',
+        'Yatak yıkama yapıyor musunuz?'
+      ],
+      topics: {
+        price: '3+1 detaylı boş veya dolu ev temizliği hizmetimiz (1 tam gün, 2 kişilik profesyonel kadın personel, Karcher buharlı dezenfeksiyon makinesi ve tüm kimyasallar dahil) sabit 2.400 TL\'dir efendim. Yol, malzeme ve yemek dahil olup kesinlikle ekstra sürpriz ücret talep edilmez.',
+        sofa_price: 'Merhabalar efendim.. Yıkama hizmetimizin içine buharlı uygulama ücretsizdir. Standart koltuk takımı (2 adet 3\'lü çekyat + 2 tekli berjer) komple yıkama fiyatımız sabit 1.500 TL, tek çekyat ise 500 TL\'dir 🧼 Sizin yıkanacak koltuğunuz hangi model efendim?',
+        sofa_l: 'L koltuklarda ölçü ve minder yapısı farklılık gösterdiği için net fiyat verebilmemiz adına dilerseniz bize bir fotoğrafını iletebilir misiniz efendim? 📸 Sırt veya oturma minderleri sabit mi yoksa fermuarlı çıkıyor mu? Küçük/standart L koltuklar 1.000 TL, geniş köşe takımları 1.500 TL bandındadır.',
+        sofa_drying: 'Çift motorlu sanayi tipi yüksek vakumlu makinelerimiz sayesinde kumaşa verilen suyun %90\'ından fazlası anında geri çekilir efendim. Kesinlikle vıcık vıcık ıslak kalmaz; 4-6 saat içinde tamamen kurur ve aynı gün koltuklarınızı güvenle kullanabilirsiniz. Parke ve zeminleriniz titizlikle korunur.',
+        sofa_stain: 'Kumaşın dokusuna zarar vermeyen özel enzim ve leke çıkarıcı solüsyonlar kullanıyoruz efendim (tay tüyü, keten, nubuk, kadife hepsi güvenle yıkanır). Kiri bezle silip süngere hapsetmek yerine, dipten vakumlayarak dışarı alıyoruz. Çay, kahve, yağ ve çocuk lekelerini %90-95 oranında tamamen arındırıyoruz.',
+        mattress: 'Yatak yıkama hizmetimizde çift taraflı derin vakum ve anti-bakteriyel buharlı mayt temizliği yapıyoruz efendim 🛏️ Tek kişilik yatak: tek yüz 400 TL / çift yüz 800 TL. Çift kişilik yatak: tek yüz 800 TL / çift yüz 1.500 TL\'dir. Alerjiye karşı organik şampuanlar kullanılır.',
+        construction: 'İnşaat ve tadilat sonrası temizlikte harç, boya, alçı ve silikon kalıntılarını yüzeyleri çizmeden özel profesyonel kazıyıcılar ve çözücülerle arındırıyoruz efendim. Dairenin metrekaresi ve oda sayısına göre ekip sayısını organize ediyoruz.',
+        material: 'Kesinlikle evet efendim! Karcher profesyonel buhar makineleri, sanayi tipi vakumlar, tek kullanımlık renk kodlu mikrofiber bezler ve çevre dostu kimyasallar tarafımızdan eksiksiz getirilmektedir. Sizin hiçbir malzeme almanıza gerek kalmaz.',
+        region: 'Şehrin tüm ilçe ve çevre mahallelerine mobil servis aracımızla adrese yerinde hizmet veriyoruz efendim. Yol, ulaşım veya servis için ekstra hiçbir ücret talep etmiyoruz.',
+        appointment: 'Yarın sabah saat 09:00 başlangıçlı profesyonel servis ekibimiz şu an müsait görünüyor efendim! Randevunuzu hemen sabitleyebilmemiz için açık adresinizi ve bir iletişim numarası rica edebilir miyim?',
+        duration: '3+1 standart detaylı ev temizliği hizmetimiz 2 kişilik uzman ekibimizle ortalama 6-7 saat, koltuk yıkama ise ortalama 1-1.5 saat sürmektedir efendim. Çift motorlu vakum sayesinde yıkanan koltuklar 4-6 saatte tamamen kurur ve aynı gün kullanıma hazır hale gelir.',
+        hours: 'Saha temizlik ekiplerimiz haftanın 7 günü 08:30 - 18:30 saatleri arasında çalışmaktadır. Ben ise 7/24 rezervasyon ve acil talepleri kaydetmekteyim.'
       }
     },
     ecom: {
       name: 'AutoNEX E-Ticaret & Satış Asistanı',
       avatar: '🛍️',
       sector: 'E-Ticaret & Perakende Satış',
-      summary: 'sipariş takibi, kargolama, ürün beden seçimi, kapıda ödeme ve iade/değişim',
-      welcome: 'Selam! Mağazamıza hoş geldiniz. ⚡ Yeni sezon koleksiyonumuzda bugüne özel sepette %20 anında indirim var! Beden rehberi, sipariş takibi veya kargo süreçleri hakkında ne sormak istersiniz?',
+      summary: 'sipariş takibi, kargolama, ürün beden seçimi, kapıda ödeme ve 14 gün ücretsiz iade/değişim',
+      welcome: 'Selam! Mağazamıza hoş geldiniz. ⚡ Yeni sezon koleksiyonumuzda bugüne özel sepette %20 anında indirim tanımlandı! Beden rehberi, sipariş takibi veya kargo süreçleri hakkında ne sormak istersiniz?',
       prompts: [
         'Siparişim ne zaman kargolanır?',
+        'Kargom nerede?',
         'Kapıda ödeme imkanı var mı?',
         'İade ve değişim şartları nedir?',
         'Beden seçimi nasıl yapılmalı?',
         'Kargo ücreti ne kadar?'
       ],
       topics: {
-        shipping: 'Hafta içi saat 16:00\'ya kadar verilen tüm siparişler aynı gün Yurtiçi Kargo güvencesiyle yola çıkar! Ortalama 1-3 iş günü içinde adresinize teslim edilir.',
-        shipping_cost: '500 TL ve üzeri tüm siparişlerinizde kargo tamamen ÜCRETSİZDİR! 500 TL altındaki siparişlerde anlaşmalı kargo ücreti sabit 49 TL\'dir.',
-        payment: 'Evet, kapıda nakit veya kredi kartıyla güvenli ödeme seçeneğimiz mevcuttur. Ayrıca web sitemizde tüm kartlara peşin fiyatına 3 taksit fırsatımız bulunmaktadır!',
-        return: 'Siparişinizi teslim aldıktan sonra 14 gün içinde koşulsuz ve ücretsiz iade veya beden değişimi yapabilirsiniz. Size hemen anlaşmalı ücretsiz iade kargo kodu oluşturabilirim.',
-        size: 'Kalıplarımız standart kalıptır (True-to-size). Boy ve kilo bilginizi iletirseniz, en uygun bedeni saniyeler içinde sizin için hesaplayabilirim.',
-        order: 'Siparişinizin durumunu anında sorgulamak için 6 haneli sipariş numaranızı veya telefon numaranızı yazmanız yeterlidir; canlı kargo takip linkinizi ileteyim.',
-        price: 'Sezon ürünlerimizde sepette %20 indirim tanımlıdır! Ayrıca 2. ürüne %50 indirim kampanyamız devam ediyor. İndirim kuponunuzu sepetinize otomatik uygulayabilirim.',
-        hours: 'Online mağazamız ve sipariş altyapımız 7/24 kesintisiz çalışmaktadır. Canlı kargo gönderimlerimiz hafta içi her gün yapılmaktadır.'
-      }
-    },
-    service: {
-      name: 'AutoNEX Yerel Hizmet & Temizlik Asistanı',
-      avatar: '🧹',
-      sector: 'Yerel Hizmet, Temizlik & Saha Servisi',
-      summary: 'ev/ofis temizliği, koltuk yıkama, anlık sabit fiyat teklifleri ve ekip rezervasyonu',
-      welcome: 'Merhaba! Profesyonel Temizlik & Yerel Hizmet hattına hoş geldiniz. 🧼 Ev, ofis, villa veya inşaat sonrası temizlik için anında sabit fiyat teklifi alabilir ve rezervasyonunuzu saniyeler içinde oluşturabilirsiniz.',
-      prompts: [
-        '3+1 ev temizliği ne kadar?',
-        'Yarın için boş ekibiniz var mı?',
-        'Temizlik malzemelerini getiriyor musunuz?',
-        'Koltuk yıkama hizmeti var mı?',
-        'Hangi bölgelere hizmet veriyorsunuz?'
-      ],
-      topics: {
-        price: '3+1 standart detaylı ev temizliği hizmetimiz (1 tam gün, 2 kişilik profesyonel ekip ve buharlı dezenfeksiyon makinesi dahil) sabit 2.400 TL\'dir. Yol ve malzeme dahil olup ekstra hiçbir sürpriz ücret çıkmaz.',
-        duration: '3+1 standart detaylı ev temizliği hizmetimiz 2 kişilik uzman ekibimizle ortalama 6-7 saat sürmektedir. İnşaat sonrası veya boş daire temizlikleri ise metrekareye göre 7-8 saat sürebilir.',
-        appointment: 'Yarın sabah 09:00 başlangıçlı seansımız için şu an 1 profesyonel ekibimiz müsait görünüyor! İlçe, mahalle ve telefon bilgilerinizi alarak randevunuzu hemen sabitleyebilirim.',
-        material: 'Kesinlikle evet! Karcher profesyonel buhar makineleri, vakumlu çekiciler, tek kullanımlık mikrofiber bezler ve çevre dostu kimyasallar tarafımızdan eksiksiz getirilmektedir.',
-        sofa: 'Evet! Yerinde buharlı ve derin vakumlu koltuk yıkama hizmetimiz mevcuttur. L leke çıkarma garantili olup işlem sonrası koltuklarınız 3-4 saat içinde tamamen kurur.',
-        region: 'Şehrin tüm ilçe ve mahallelerine mobil servisimiz mevcuttur. Ulaşım veya servis için ekstra yol ücreti talep etmiyoruz.',
-        hours: 'Saha temizlik ekiplerimiz haftanın 7 günü 08:30 - 18:30 saatleri arasında çalışmaktadır. Ben ise 7/24 rezervasyon ve acil talepleri kaydetmekteyim.'
+        shipping: 'Hafta içi saat 16:00\'ya kadar verilen tüm siparişler aynı gün depomuzdan Yurtiçi Kargo güvencesiyle yola çıkar! 📦 İl ve ilçenize bağlı olarak 1-3 iş günü içinde adresinize teslim edilir. Kargo yola çıktığında SMS ile canlı takip linkiniz otomatik iletilir.',
+        shipping_cost: '500 TL ve üzeri tüm siparişlerinizde kargo tamamen ÜCRETSİZDİR! 🚚 500 TL altındaki siparişlerde ise anlaşmalı indirimli kargo ücretimiz sabit 49 TL\'dir.',
+        payment: 'Evet! Kapıda nakit veya kapıda kredi kartı ile güvenli ödeme seçeneğimiz mevcuttur 💳 Ayrıca web sitemizde tüm banka kartlarına peşin fiyatına 3-6 taksit fırsatı ve 3D Secure güvencesiyle siparişinizi hemen oluşturabilirsiniz.',
+        return: 'Siparişinizi teslim aldığınız tarihten itibaren 14 gün boyunca koşulsuz ve ücretsiz iade veya beden değişimi hakkınız bulunmaktadır 🔄 Size hemen anlaşmalı iade kargo kodumuzu iletiyoruz; paketi kargoya ücretsiz teslim ettiğinizde 2 iş günü içinde ücret iadeniz kartınıza eksiksiz yansıtılır.',
+        size: 'Kalıplarımız tam standart kalıptır (True-to-Size). Dilerseniz boy ve kilo bilginizi iletin, sizin için en ideal bedeni (S, M, L, XL) saniyeler içinde önerelim! Rahat veya salaş (oversize) durmasını isterseniz 1 beden büyük tercih edebilirsiniz.',
+        order: 'Siparişinizin anlık kargo durumunu sorgulamak için 6 haneli sipariş numaranızı veya sipariş verirken kullandığınız telefon numaranızı yazabilir misiniz? Canlı kargo hareket dökümünü hemen getireyim 🔍',
+        price: 'Sezon ürünlerimizde bugüne özel sepette %20 anında indirim tanımlıdır! Ayrıca 2. ürüne %50 indirim kampanyamız devam ediyor. İndirim kuponunuzu sepetinize otomatik uygulayabilirim 🎁',
+        authenticity: 'Tüm ürünlerimiz %100 orijinal, adınıza e-fatura kesilerek faturalı, etiketli ve kalite kontrolünden geçirilerek ambalajında gönderilmektedir. Güvenle alışveriş yapabilirsiniz.',
+        hours: 'Online mağazamız ve akıllı sipariş asistanımız 7/24 kesintisiz çalışmaktadır. Depomuzdan kargo çıkışları hafta içi her gün ve Cumartesi öğleye kadar düzenli yapılmaktadır.'
       }
     },
     restaurant: {
-      name: 'AutoNEX Restoran & Rezervasyon Asistanı',
+      name: 'AutoNEX Restoran & Gastronomi Asistanı',
       avatar: '🍽️',
       sector: 'Restoran, Kafe & Gastronomi',
-      summary: 'masa rezervasyonu, menü detayları, özel etkinlikler ve çalışma saatleri',
-      welcome: 'Hoş geldiniz! 🍷 Şefimizin gurme lezzetleri, güncel menümüz, özel kutlamalar veya akşam masası rezervasyonu için 7/24 hizmetinizdeyim. Size nasıl yardımcı olabilirim?',
+      summary: 'masa rezervasyonu, gurme menü, doğum günü kutlamaları, vale ve akustik canlı müzik',
+      welcome: 'Hoş geldiniz! 🍷 Odun ateşinde Napoli pizzalarımız, dry-aged et seçeneklerimiz, özel kutlamalar veya akşam masası rezervasyonu için 7/24 hizmetinizdeyim. Size nasıl yardımcı olabilirim?',
       prompts: [
         'Bu akşam 20:00 için 4 kişilik masa var mı?',
         'Menü ve fiyatları görebilir miyim?',
         'Doğum günü veya özel kutlama yapıyor musunuz?',
-        'Otopark ve vale hizmeti var mı?',
-        'Çalışma saatleriniz nedir?'
+        'Glutensiz ve vegan seçenek var mı?',
+        'Otopark ve vale hizmeti var mı?'
       ],
       topics: {
-        appointment: 'Bu akşam saat 20:00 için bahçe veya teras alanımızda 4 kişilik harika bir masamız müsait! 🥂 Rezervasyon adına bir İsim Soyisim ve telefon numarası alabilir miyim?',
-        price: 'Taş fırın İtalyan pizzalarımız, dry-aged et seçeneklerimiz, el yapımı taze makarna ve gurme burger çeşitlerimiz bulunmaktadır. Ortalama ana yemekler 280 - 540 TL arasındadır. Dijital menü linkimizi iletebilirim!',
-        duration: 'Mutfak siparişlerimizin servis süresi ortalama 15-20 dakikadır. Taze ve sıcak servis edilir.',
-        birthday: 'Elbette! Doğum günü, yıl dönümü ve özel kutlamalar için masa süslemesi, şefin ikram pastası ve özel müzik servisi sağlıyoruz. Önceden bildirdiğinizde masanızı özel hazırlatıyoruz.',
-        valet: 'Evet, restoranımızın hemen önünde misafirlerimize özel ücretsiz kapalı otopark ve vale hizmetimiz bulunmaktadır.',
-        hours: 'Restoranımız haftanın her günü 11:30 - 00:30 saatleri arasında hizmet vermektedir. Mutfak son sipariş alımı 23:00\'e kadardır.',
-        location: 'Restoranımız sahil şeridinde, merkezi marina bölgesinde yer almaktadır. WhatsApp üzerinden harita konumunu anında paylaşabilirim.'
+        appointment: 'Bu akşam için bahçe, teras veya şömine yanı alanlarımızda harika bir masamız müsait! 🥂 Kaç kişilik bir masa ayırmamızı istersiniz? Adınız Soyadınız ve iletişim numaranızı iletirseniz rezervasyon kartınızı hemen oluşturup onay SMS\'inizi iletiyorum.',
+        price: 'Taş fırın odun ateşinde Napoli pizzalarımız, dry-aged dinlendirilmiş antrikot ve bonfile seçeneklerimiz, el yapımı taze makarnalarımız ve gurme burger çeşitlerimiz bulunmaktadır 🍕 Ortalama ana yemeklerimiz 290 - 580 TL arasındadır. Dijital QR menü linkimizi iletmemi ister misiniz?',
+        birthday: 'Elbette, kutlamalarınızda yanınızda olmaktan mutluluk duyarız! 🎉 Önceden bildirdiğinizde masanıza özel şık çiçek/mum süslemesi hazırlıyoruz ve şefimizin ikram doğum günü tatlısını özel volkanlı sunumla servis ediyoruz. Kutlama hangi gün olacak efendim?',
+        vegan_gluten: 'Evet! Menümüzde çölyak dostu glutensiz taze makarna ve glutensiz pizza hamuru alternatiflerimiz, zengin vegan sebze tabaklarımız ve bitkisel süt seçeneklerimiz bulunmaktadır 🌱 Alerjiniz olan spesifik bir içerik varsa mutfağımıza önceden memnuniyetle not iletebilirim.',
+        valet: 'Evet, restoranımızın hemen önünde misafirlerimize özel ücretsiz kapalı otoparkımız ve profesyonel vale hizmetimiz bulunmaktadır 🚗 Park sorunu yaşamadan rahatça gelebilirsiniz.',
+        hours: 'Restoranımız haftanın her günü 11:30 - 00:30 saatleri arasında kesintisiz hizmet vermektedir. Mutfak son sipariş alımı 23:00\'e kadardır. Cuma ve Cumartesi akşamları 20:30\'dan itibaren hafif akustik canlı müzik dinletimiz mevcuttur 🎶',
+        takeaway: 'Evet! Yemeksepeti, Getir ve Trendyol Yemek üzerinden sıcak paket servisimiz bulunmaktadır. Ayrıca doğrudan restoranımızdan %10 gel-al indirimiyle siparişinizi teslim alabilirsiniz.',
+        location: 'Restoranımız merkezi sahil şeridinde, marina bölgesinde yer almaktadır 📍 WhatsApp üzerinden harita konumunu anında iletebilirim.'
       }
     },
     corporate: {
-      name: 'AutoNEX Kurumsal & B2B Danışmanlık',
+      name: 'AutoNEX Kurumsal & B2B AI Danışmanlık',
       avatar: '🏢',
-      sector: 'Kurumsal & B2B Danışmanlık',
-      summary: 'Meta Graph API entegrasyonu, CRM bağlantıları, kurumsal fiyatlandırma ve online keşif toplantısı',
-      welcome: 'Merhaba! AutoNEX Kurumsal Çözümler Danışma Hattı\'na hoş geldiniz. 💼 İşletmeniz için yapay zeka otomasyonları, Meta API entegrasyonları, CRM bağlantıları ve kurumsal teklif süreçleri hakkında bilgi alabilirsiniz.',
+      sector: 'Kurumsal B2B & Yapay Zeka Danışmanlık',
+      summary: 'Meta Graph API resmi entegrasyonu, CRM bağlantıları, kurumsal paketler ve online keşif toplantısı',
+      welcome: 'Merhaba! AutoNEX Kurumsal Çözümler Danışma Hattı\'na hoş geldiniz. 💼 İşletmeniz için 48 saatte anahtar teslim yapay zeka otomasyonları, Meta API entegrasyonları, CRM bağlantıları ve kurumsal teklif süreçleri hakkında bilgi alabilirsiniz.',
       prompts: [
         'İşletmemize kurulum ne kadar sürüyor?',
         'Fiyatlandırma ve paketler nasıl?',
         'Bizim mevcut CRM/yazılıma bağlanır mı?',
-        'Teklif ve keşif toplantısı alabilir miyim?',
-        'Hangi sektörler için uygunsunuz?'
+        'KVKK ve veri güvenliği standartları nedir?',
+        'Teklif ve keşif toplantısı alabilir miyim?'
       ],
       topics: {
-        setup: 'AutoNEX motoru anahtar teslim kurulur. Şirketinizin SSS, fiyat ve operasyon kurallarını aldıktan sonra 48 saat içinde Meta Graph API onaylı şekilde canlıya alıyoruz.',
-        price: 'İşletme büyüklüğünüze göre esnek paketlerimiz mevcuttur: Başlangıç (Tek Kanal), Büyüme (Instagram + WhatsApp + CRM) ve Kurumsal Özel AI. Net fiyat teklifi için keşif formumuzu doldurabilir veya canlı görüşme planlayabilirsiniz.',
-        crm: 'Evet! Webhook, REST API ve Zapier/Make köprüleri sayesinde HubSpot, Zoho, Google Sheets, Parasut ve özel veritabanlarınıza iki yönlü tam entegrasyon sağlıyoruz.',
-        appointment: 'Harika! 15 dakikalık ücretsiz online keşif ve canlı demo toplantısı planlayabiliriz. Hangi gün ve saat sizin için uygundur? Yetkilimiz Google Meet davetiyesini iletsin.',
-        sectors: 'Klinik & sağlık, e-ticaret, gayrimenkul, otomotiv, otel & restoran, sigorta, hukuk büroları ve yerel hizmetler başta olmak üzere müşteriyle mesajlaşan TÜM sektörlere %100 uyumludur.',
+        setup: 'AutoNEX motoru anahtar teslim kurulur. Şirketinizin SSS, fiyat listesi ve müşteri temsilcisi operasyon kurallarını aldıktan sonra sistemi yalnızca 48 saat içinde Meta Graph API resmi onaylı şekilde canlıya alıyoruz. Yazılımcı çalıştırmanıza veya kod yazmanıza gerek kalmaz.',
+        price: 'İşletme büyüklüğünüze ve mesaj hacminize göre şeffaf sabit paketlerimiz mevcuttur: Başlangıç (Tek Kanal Instagram/WhatsApp), Büyüme (Multi-Channel + CRM Entegrasyonu) ve Kurumsal Özel AI (SLA & Özel LLM). Mesaj başına sürpriz ekstra maliyetler çıkarılmaz. Net teklif için keşif görüşmesi planlayabiliriz.',
+        crm: 'Evet! Webhook, REST API ve hazır konnektörlerimiz sayesinde HubSpot, Zoho, Salesforce, Parasut, Ticimax, IdeaSoft, Shopify ve Google Sheets dahil tüm veritabanlarınıza iki yönlü tam entegrasyon sağlıyoruz. Gelen mesajdaki lead veya sipariş anında CRM\'inize işlenir.',
+        appointment: 'Harika! 15 dakikalık ücretsiz online Google Meet keşif toplantısı planlayabiliriz 💼 Ekibimiz mevcut müşteri mesajlaşma trafiğinizi inceler ve işletmenize özel potansiyel tasarruf ve ciro artış raporunu canlı sunar. Hangi gün ve saat aralığı sizin için uygundur?',
+        sectors: 'Klinik & sağlık, yerel hizmet & temizlik, e-ticaret, gayrimenkul, otomotiv, otel & restoran, turizm ve hukuk büroları başta olmak üzere; Instagram DM, WhatsApp veya web sitesinden müşteriyle mesajlaşan TÜM sektörlere %100 uyumlu olarak eğitilebilmektedir.',
+        security: 'Veri güvenliği en yüksek önceliğimizdir 🔒 Müşteri mesajlarınız uçtan uca şifrelenir ve KVKK/GDPR standartlarına tam uyumlu olarak barındırılır. Şirketinize ait ticari veriler asla üçüncü taraf yapay zeka modellerini genel eğitmek için kullanılmaz.',
+        handover: 'Herhangi bir anda müşteri özel bir durum belirttiğinde veya canlı bir yetkili ile görüşmek istediğinde; yapay zeka saniyeler içinde sessize geçer ve canlı temsilcinizin paneline WhatsApp/Telegram üzerinden anında alarm bildirimi düşürür.',
         hours: 'Kurumsal danışmanlık ekibimiz hafta içi 09:00 - 18:30 saatleri arasında hizmet vermektedir. AI altyapımız ise 7/24 aktiftir.'
       }
     }
@@ -215,7 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Normalize Turkish text helper for robust keyword matching
   function cleanText(str) {
+    if (!str) return '';
     return str
+      .replace(/İ/g, 'i')
+      .replace(/I/g, 'i')
       .toLowerCase()
       .replace(/ğ/g, 'g')
       .replace(/ü/g, 'u')
@@ -259,28 +275,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================================
     // Priority 0: Exact or High-Affinity Quick Prompt Matching
-    // Ensures clicking prompt chips or typing matching prompt questions
-    // ALWAYS returns the exact intended answer.
     // ==========================================================
     if (currentScenario === 'clinic') {
-      if (text.includes('cilt bakimi ne kadar') || (text.includes('cilt') && text.includes('sur'))) {
+      if (text.includes('cilt bakimi ne kadar') || (text.includes('cilt') && (text.includes('sur') || text.includes('dakika')))) {
         return data.topics.skin;
       }
-      if (text.includes('fiyatlar ve seanslar') || text.includes('nasil belirleniyor') || text.includes('lazer epilasyon seans') || text.includes('lazer epilasyon fiyat') || (text.includes('lazer') && (text.includes('fiyat') || text.includes('ucret') || text.includes('kampanya')))) {
+      if (text.includes('fiyatlar ve seanslar') || text.includes('nasil belirleniyor')) {
         return data.topics.price;
       }
-      if (text.includes('cumartesi 14:00') || (text.includes('randevu') && (text.includes('cumartesi') || text.includes('var mi') || text.includes('14')))) {
+      if (text.includes('dis klinigi') || text.includes('gulus estetigi') || text.includes('dis beyazlatma')) {
+        return data.topics.dental;
+      }
+      if (text.includes('doktor muayenesi') || text.includes('hekim muayenesi')) {
+        return data.topics.doctor;
+      }
+      if (text.includes('cumartesi 14:00') || (text.includes('randevu') && (text.includes('cumartesi') || text.includes('14')))) {
         return data.topics.appointment;
       }
-      if (text.includes('agrisiz mi') || text.includes('aci hisseder miyim') || text.includes('acit')) {
+      if (text.includes('agrisiz mi') || text.includes('aci hisseder miyim')) {
         return data.topics.pain;
       }
       if (text.includes('konumu nerede') || text.includes('kliniginizin konumu')) {
         return data.topics.location;
       }
+    } else if (currentScenario === 'service') {
+      if (text.includes('koltuk yikama fiyat') || (text.includes('koltuk') && text.includes('fiyat'))) {
+        return data.topics.sofa_price;
+      }
+      if (text.includes('3+1 ev temizligi ne kadar') || (text.includes('3+1') && text.includes('ne kadar'))) {
+        return data.topics.price;
+      }
+      if (text.includes('kac saatte kurur') || (text.includes('kurur') && text.includes('saat'))) {
+        return data.topics.sofa_drying;
+      }
+      if (text.includes('l koltuk yikama') || text.includes('kose koltuk') || text.includes('l koltuk')) {
+        return data.topics.sofa_l;
+      }
+      if (text.includes('yarin icin bos') || text.includes('ekibiniz var mi')) {
+        return data.topics.appointment;
+      }
+      if (text.includes('deterjanlari siz mi') || text.includes('malzemeleri getiriyor')) {
+        return data.topics.material;
+      }
+      if (text.includes('yatak yikama')) {
+        return data.topics.mattress;
+      }
     } else if (currentScenario === 'ecom') {
-      if (text.includes('ne zaman kargo') || text.includes('ne zaman kargolanir')) {
+      if (text.includes('ne zaman kargo') || text.includes('kargolanir')) {
         return data.topics.shipping;
+      }
+      if (text.includes('kargom nerede') || text.includes('kargo nerede') || text.includes('siparis takip')) {
+        return data.topics.order;
       }
       if (text.includes('kapida odeme')) {
         return data.topics.payment;
@@ -294,22 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (text.includes('kargo ucreti ne kadar') || (text.includes('kargo') && text.includes('ucret'))) {
         return data.topics.shipping_cost;
       }
-    } else if (currentScenario === 'service') {
-      if (text.includes('3+1 ev temizligi ne kadar') || (text.includes('3+1') && text.includes('ne kadar'))) {
-        return data.topics.price;
-      }
-      if (text.includes('yarin icin bos') || text.includes('ekibiniz var mi')) {
-        return data.topics.appointment;
-      }
-      if (text.includes('malzemelerini getiriyor') || text.includes('temizlik malzemeleri')) {
-        return data.topics.material;
-      }
-      if (text.includes('koltuk yikama')) {
-        return data.topics.sofa;
-      }
-      if (text.includes('hangi bolgelere') || text.includes('bolgelere hizmet')) {
-        return data.topics.region;
-      }
     } else if (currentScenario === 'restaurant') {
       if (text.includes('20:00') || text.includes('4 kisilik masa')) {
         return data.topics.appointment;
@@ -320,11 +349,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (text.includes('dogum gunu') || text.includes('ozel kutlama')) {
         return data.topics.birthday;
       }
+      if (text.includes('glutensiz ve vegan') || text.includes('vegan veya glutensiz')) {
+        return data.topics.vegan_gluten;
+      }
       if (text.includes('otopark ve vale') || text.includes('vale hizmeti')) {
         return data.topics.valet;
-      }
-      if (text.includes('calisma saatleriniz')) {
-        return data.topics.hours;
       }
     } else if (currentScenario === 'corporate') {
       if (text.includes('kurulum ne kadar suruyor') || (text.includes('kurulum') && text.includes('sur'))) {
@@ -336,144 +365,168 @@ document.addEventListener('DOMContentLoaded', () => {
       if (text.includes('crm') || text.includes('yazilima baglanir')) {
         return data.topics.crm;
       }
+      if (text.includes('kvkk ve veri') || text.includes('veri guvenligi')) {
+        return data.topics.security;
+      }
       if (text.includes('teklif ve kesif') || text.includes('toplantisi alabilir')) {
         return data.topics.appointment;
-      }
-      if (text.includes('hangi sektorler icin') || text.includes('sektorler icin uygun')) {
-        return data.topics.sectors;
       }
     }
 
     // ==========================================================
-    // Priority 1: Duration & Time Questions (Crucial!)
-    // "ne kadar sürer", "kaç saat", "ne zaman", "süresi nedir"
-    // Must NEVER be confused with price!
+    // Priority 1: Duration & Time Questions (Handled with extreme precision)
+    // "ne kadar sürer", "kaç saat", "ne kadar zaman", "kaç dakika"
     // ==========================================================
-    const isDuration = 
-      text.includes('sur') || 
-      text.includes('sure') || 
-      text.includes('kac saat') || 
-      text.includes('kac dakika') || 
-      text.includes('kac dk') || 
-      text.includes('ne kadar zaman') || 
-      text.includes('ne kadar sur') ||
-      text.includes('ne zaman');
+    const durationKeywords = ['surer', 'suruyor', 'suresi', 'ne kadar sur', 'kac saat', 'kac dakika', 'kac dk', 'ne kadar zaman'];
+    const isDuration = durationKeywords.some(kw => text.includes(kw));
 
     if (isDuration) {
       if (currentScenario === 'clinic') {
-        if (text.includes('cilt') || text.includes('hydra') || text.includes('bakim') || text.includes('yuz') || text.includes('maske') || text.includes('gozenek')) {
+        if (text.includes('cilt') || text.includes('hydra') || text.includes('bakim')) {
           return data.topics.skin;
         }
-        if (text.includes('lazer') || text.includes('epilasyon') || text.includes('seans')) {
+        if (text.includes('lazer') || text.includes('epilasyon')) {
           return data.topics.laser_duration;
         }
-        // General clinic duration
-        return `Kliniğimizde Medikal Hydrafacial cilt bakımı protokolümüz 50-60 dakika, tüm vücut buz başlıklı lazer seansımız ise 35-45 dakika sürmektedir. Hangi işlemimiz hakkında detay veya randevu istersiniz?`;
-      } else if (currentScenario === 'ecom') {
-        return data.topics.shipping;
+        return 'Kliniğimizde Medikal Hydrafacial cilt bakımı protokolümüz 50-60 dakika, tüm vücut buz başlıklı lazer seansımız ise 35-45 dakika sürmektedir 🌸 Hangi işlemimiz hakkında detay veya randevu istersiniz?';
       } else if (currentScenario === 'service') {
+        if (text.includes('kurur') || text.includes('kuruma') || text.includes('koku') || text.includes('islak') || text.includes('nemli')) {
+          return data.topics.sofa_drying;
+        }
         if (text.includes('koltuk')) {
-          return `Koltuk yıkama işlemimiz yaklaşık 1-1.5 saat sürmektedir. Derin vakum teknolojisi sayesinde kumaş 3-4 saat içinde tamamen kurur ve kullanıma hazır hale gelir.`;
+          return 'Koltuk yıkama işlemimiz ortalama 1-1.5 saat sürmektedir efendim. Çift motorlu vakum sayesinde kumaş 4-6 saatte tamamen kurur ve aynı gün kullanıma hazır hale gelir.';
         }
         return data.topics.duration;
+      } else if (currentScenario === 'ecom') {
+        return data.topics.shipping;
       } else if (currentScenario === 'restaurant') {
-        return data.topics.duration;
+        return 'Mutfak siparişlerimizin servis süresi ortalama 15-20 dakikadır. Taze ve sıcak servis edilir 🍷';
       } else if (currentScenario === 'corporate') {
         return data.topics.setup;
       }
     }
 
     // ==========================================================
-    // Priority 2: Sector-Specific Entities & Sub-Services
-    // Evaluates specific service queries (with their specific prices or features)
-    // BEFORE hitting generic broad catch-alls!
+    // Priority 2: Deep Sector-Specific Entity & Intent Matching
     // ==========================================================
     if (currentScenario === 'clinic') {
-      // Skin care queries
-      if (text.includes('cilt') || text.includes('hydra') || text.includes('leke') || text.includes('siyah nokta') || text.includes('gozenek') || text.includes('peeling')) {
-        if (text.includes('fiyat') || text.includes('ucret') || text.includes('kac tl') || text.includes('kac para') || text.includes('paket') || text.includes('ne kadar')) {
+      if (['dis', 'implant', 'zirkonyum', 'beyazlatma', 'bleaching', 'plak', 'ortodonti', 'cene', 'gulus'].some(k => text.includes(k))) {
+        return data.topics.dental;
+      }
+      if (['doktor', 'hekim', 'poliklinik', 'muayene', 'tahlil', 'tetkik', 'brans'].some(k => text.includes(k))) {
+        return data.topics.doctor;
+      }
+      if (['cilt', 'hydra', 'leke', 'yosun', 'peeling', 'siyah nokta', 'gozenek', 'akne', 'sivilce'].some(k => text.includes(k))) {
+        if (['fiyat', 'ucret', 'kac tl', 'kac para', 'paket', 'ne kadar'].some(k => text.includes(k))) {
           return data.topics.skin_price;
         }
         return data.topics.skin;
       }
-      // Pain / Comfort queries
-      if (text.includes('aci') || text.includes('agri') || text.includes('yanar') || text.includes('acitir') || text.includes('his')) {
+      if (['aci', 'agri', 'yanar', 'acit', 'his'].some(k => text.includes(k))) {
         return data.topics.pain;
       }
-      // Laser queries
-      if (text.includes('lazer') || text.includes('epilasyon') || text.includes('buz baslik') || text.includes('kil')) {
+      if (['lazer', 'epilasyon', 'buz baslik', 'kil'].some(k => text.includes(k))) {
+        return data.topics.price;
+      }
+      if (['fiyat', 'ucret', 'kac para', 'kac tl', 'kampanya', 'paket', 'ne kadar'].some(k => text.includes(k))) {
+        return data.topics.price;
+      }
+    } else if (currentScenario === 'service') {
+      if (['l koltuk', 'kose koltuk', 'kose takimi', 'kose'].some(k => text.includes(k))) {
+        return data.topics.sofa_l;
+      }
+      if (['kurur', 'kuruma', 'islak', 'nemli', 'koku'].some(k => text.includes(k))) {
+        return data.topics.sofa_drying;
+      }
+      if (['yatak', 'baza', 'mayt', 'akar'].some(k => text.includes(k))) {
+        return data.topics.mattress;
+      }
+      if (['insaat', 'tadilat', 'harc', 'boya', 'alci', 'silikon'].some(k => text.includes(k))) {
+        return data.topics.construction;
+      }
+      if (['leke', 'cikar mi', 'cay', 'kahve', 'yag', 'kumas', 'tay tuyu', 'keten', 'nubuk', 'kadife'].some(k => text.includes(k))) {
+        return data.topics.sofa_stain;
+      }
+      if (['malzeme', 'deterjan', 'kimyasal', 'karcher', 'makine', 'bez'].some(k => text.includes(k))) {
+        return data.topics.material;
+      }
+      if (['bolge', 'ilce', 'semt', 'servis', 'nereye', 'sehir', 'koy'].some(k => text.includes(k))) {
+        return data.topics.region;
+      }
+      if (['koltuk', 'cekyat', 'berjer', 'yikama'].some(k => text.includes(k))) {
+        return data.topics.sofa_price;
+      }
+      if (['3+1', '2+1', '1+1', 'ev', 'daire', 'villa', 'ofis', 'temizlik'].some(k => text.includes(k))) {
         return data.topics.price;
       }
     } else if (currentScenario === 'ecom') {
-      // Shipping cost
-      if ((text.includes('kargo') || text.includes('teslimat')) && (text.includes('ucret') || text.includes('fiyat') || text.includes('ne kadar') || text.includes('kac tl') || text.includes('bedava') || text.includes('ucretsiz'))) {
-        return data.topics.shipping_cost;
-      }
-      // Shipping general
-      if (text.includes('kargo') || text.includes('teslimat') || text.includes('yurtici') || text.includes('ulasir')) {
-        return data.topics.shipping;
-      }
-      // Payment
-      if (text.includes('kapida') || text.includes('odeme') || text.includes('taksit') || text.includes('kart') || text.includes('nakit') || text.includes('havale')) {
-        return data.topics.payment;
-      }
-      // Return & Exchange
-      if (text.includes('iade') || text.includes('degisim') || text.includes('geri')) {
-        return data.topics.return;
-      }
-      // Sizing
-      if (text.includes('beden') || text.includes('kalip') || text.includes('boy') || text.includes('kilo') || text.includes('small') || text.includes('medium') || text.includes('large')) {
-        return data.topics.size;
-      }
-      // Order tracking
-      if (text.includes('siparis') || text.includes('takip') || text.includes('nerede')) {
+      // Order tracking (evaluated BEFORE general shipping)
+      if (['kargom nerede', 'kargo nerede', 'siparisim nerede', 'siparis nerede', 'nerede', 'kargo takip', 'siparis takip', 'takip'].some(k => text.includes(k))) {
         return data.topics.order;
       }
-    } else if (currentScenario === 'service') {
-      // Sofa washing
-      if (text.includes('koltuk') || text.includes('yikama') || text.includes('doseme') || text.includes('hali') || text.includes('leke')) {
-        return data.topics.sofa;
+      if (['kargo', 'teslimat'].some(k => text.includes(k)) && ['ucret', 'fiyat', 'ne kadar', 'kac tl', 'bedava', 'ucretsiz'].some(k => text.includes(k))) {
+        return data.topics.shipping_cost;
       }
-      // Cleaning equipment / chemicals
-      if (text.includes('malzeme') || text.includes('deterjan') || text.includes('kimyasal') || text.includes('karcher') || text.includes('makine') || text.includes('bez')) {
-        return data.topics.material;
+      if (['kargo', 'teslimat', 'yurtici', 'ulasir', 'ne zaman'].some(k => text.includes(k))) {
+        return data.topics.shipping;
       }
-      // Service coverage area
-      if (text.includes('bolge') || text.includes('ilce') || text.includes('semt') || text.includes('servis') || text.includes('nereye') || text.includes('sehir')) {
-        return data.topics.region;
+      if (['kapida', 'odeme', 'taksit', 'kart', 'nakit', 'havale', 'eft'].some(k => text.includes(k))) {
+        return data.topics.payment;
       }
-      // Home cleaning
-      if (text.includes('3+1') || text.includes('2+1') || text.includes('ev') || text.includes('daire') || text.includes('villa') || text.includes('ofis') || text.includes('temizlik')) {
+      if (['iade', 'degisim', 'geri', 'begenmez'].some(k => text.includes(k))) {
+        return data.topics.return;
+      }
+      if (['beden', 'kalip', 'boy', 'kilo', 'small', 'medium', 'large', 'xl', 'oversize'].some(k => text.includes(k))) {
+        return data.topics.size;
+      }
+      if (['siparis', 'kargom'].some(k => text.includes(k))) {
+        return data.topics.order;
+      }
+      if (['orijinal', 'fatura', 'guvenilir', 'garanti', 'cakma'].some(k => text.includes(k))) {
+        return data.topics.authenticity;
+      }
+      if (['indirim', 'kampanya', 'kupon', 'kod', 'firsat', 'fiyat'].some(k => text.includes(k))) {
         return data.topics.price;
       }
     } else if (currentScenario === 'restaurant') {
-      // Birthday & Special celebration
-      if (text.includes('dogum gunu') || text.includes('kutlama') || text.includes('ozel') || text.includes('pasta') || text.includes('surpriz') || text.includes('yil donumu')) {
+      if (['dogum gunu', 'kutlama', 'ozel', 'pasta', 'surpriz', 'yil donumu', 'susleme', 'evlilik'].some(k => text.includes(k))) {
         return data.topics.birthday;
       }
-      // Parking & Valet
-      if (text.includes('otopark') || text.includes('vale') || text.includes('araba') || text.includes('park')) {
+      if (['vegan', 'vejetaryen', 'glutensiz', 'colyak', 'alerjen', 'alerji', 'bitkisel', 'laktoz'].some(k => text.includes(k))) {
+        return data.topics.vegan_gluten;
+      }
+      if (['otopark', 'vale', 'araba', 'park', 'ucretli mi'].some(k => text.includes(k))) {
         return data.topics.valet;
       }
-      // Menu & Food
-      if (text.includes('menu') || text.includes('yemek') || text.includes('pizza') || text.includes('et') || text.includes('makarna') || text.includes('tatli') || text.includes('sarap') || text.includes('icecek')) {
+      if (['paket', 'gel al', 'kurye', 'getir', 'yemeksepeti', 'trendyol'].some(k => text.includes(k))) {
+        return data.topics.takeaway;
+      }
+      if (['canli muzik', 'akustik', 'muzik', 'dinleti'].some(k => text.includes(k))) {
+        return data.topics.hours;
+      }
+      if (['menu', 'yemek', 'pizza', 'et', 'makarna', 'tatli', 'burger', 'icecek', 'sarap', 'fiyat'].some(k => text.includes(k))) {
         return data.topics.price;
       }
     } else if (currentScenario === 'corporate') {
-      // CRM & Software
-      if (text.includes('crm') || text.includes('yazilim') || text.includes('sheets') || text.includes('api') || text.includes('webhook') || text.includes('entegr')) {
+      if (['kurulum', 'sure', 'ne kadar sur', 'canliya alma', 'nasil kurulur'].some(k => text.includes(k))) {
+        return data.topics.setup;
+      }
+      if (['crm', 'yazilim', 'sheets', 'api', 'webhook', 'hubspot', 'zoho', 'salesforce', 'parasut', 'shopify', 'entegr'].some(k => text.includes(k))) {
         return data.topics.crm;
       }
-      // Demo / Meeting / Discovery
-      if (text.includes('toplanti') || text.includes('kesif') || text.includes('demo') || text.includes('gorusme') || text.includes('meet') || text.includes('zoom')) {
+      if (['toplanti', 'kesif', 'demo', 'gorusme', 'meet', 'zoom', 'sunum'].some(k => text.includes(k))) {
         return data.topics.appointment;
       }
-      // Sectors
-      if (text.includes('sektor') || text.includes('uygun') || text.includes('kimler') || text.includes('brans')) {
+      if (['sektor', 'uygun', 'kimler', 'brans', 'bize uyar'].some(k => text.includes(k))) {
         return data.topics.sectors;
       }
-      // Packages
-      if (text.includes('paket') || text.includes('fiyat') || text.includes('ucret') || text.includes('maliyet') || text.includes('butce')) {
+      if (['guvenlik', 'kvkk', 'gdpr', 'veri', 'gizlilik', 'sozlesme'].some(k => text.includes(k))) {
+        return data.topics.security;
+      }
+      if (['temsilci', 'insan', 'devret', 'yetkili', 'mudahale', 'alarm'].some(k => text.includes(k))) {
+        return data.topics.handover;
+      }
+      if (['paket', 'fiyat', 'ucret', 'maliyet', 'butce', 'aylik'].some(k => text.includes(k))) {
         return data.topics.price;
       }
     }
@@ -483,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const apptWords = ['randevu', 'rezervasyon', 'yer ayir', 'masa', 'bos mu', 'musait', 'yarin', 'cumartesi', 'tarih', 'seans'];
     if (apptWords.some(aw => text.includes(aw))) {
-      return data.topics.appointment || data.topics.reservation || `Talebinizi aldım! Takvimimizi kontrol ettiğimde belirttiğiniz zaman dilimi için müsaitlik görünüyor. Adınız Soyadınız ve iletişim numaranızı paylaşırsanız hemen kaydınızı oluşturabilirim.`;
+      return data.topics.appointment || data.topics.reservation || 'Talebinizi aldım! Takvimimizi kontrol ettiğimde belirttiğiniz zaman dilimi için müsaitlik görünüyor. Adınız Soyadınız ve iletişim numaranızı paylaşırsanız hemen kaydınızı oluşturabilirim.';
     }
 
     // ==========================================================
@@ -491,7 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const priceWords = ['fiyat', 'ucret', 'kac para', 'tarife', 'maliyet', 'kac tl', 'indirim', 'kampanya', 'tutar'];
     if (priceWords.some(pw => text.includes(pw)) || (!isDuration && text.includes('ne kadar'))) {
-      return data.topics.price || data.topics.pricing || `Güncel kampanya ve fiyat listemiz için özel indirimlerimiz mevcuttur! Size en uygun paketi belirleyebilmemiz için detay verebilir misiniz?`;
+      return data.topics.price || data.topics.pricing || 'Güncel kampanya ve fiyat listemiz için özel indirimlerimiz mevcuttur! Size en uygun paketi belirleyebilmemiz için detay verebilir misiniz?';
     }
 
     // ==========================================================
@@ -507,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const gratitude = ['tesekkur', 'sagol', 'eyvallah', 'harika', 'tamamdir', 'anladim', 'super', 'tsk', 'cok iyi', 'gorusuruz', 'hoscakal'];
     if (gratitude.some(gr => text.includes(gr))) {
-      return `Rica ederim, ne demek! 🌟 İşleminizi onaylamak veya aklınıza takılan başka bir konuda destek olmak için 7/24 buradayım. Dilediğiniz an yazabilirsiniz.`;
+      return 'Rica ederim, ne demek! 🌟 İşleminizi onaylamak veya aklınıza takılan başka bir konuda destek olmak için 7/24 buradayım. Dilediğiniz an yazabilirsiniz.';
     }
 
     // ==========================================================
@@ -515,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const identityWords = ['kimsin', 'sen kimsin', 'bot musun', 'yapay zeka', 'autonex', 'robot', 'gercek misin', 'insan misin', 'canli misin'];
     if (identityWords.some(id => text.includes(id))) {
-      return `Ben AutoNEX altyapısıyla 7/24 çalışan yeni nesil bir Yapay Zeka Asistanıyım! 🤖 Meta Graph API üzerinden müşteri mesajlarını saniyeler içinde yanıtlar, randevu ve siparişleri insan müdahalesine gerek kalmadan anında yönetirim. Kendi işletmeniz için bu sistemi kurmak isterseniz sitedeki 'Ücretsiz Keşif Al' butonuna tıklayabilir veya 0541 875 02 88 WhatsApp hattımızdan bize ulaşabilirsiniz!`;
+      return 'Ben AutoNEX altyapısıyla 7/24 çalışan yeni nesil bir Yapay Zeka Asistanıyım! 🤖 Meta Graph API üzerinden müşteri mesajlarını saniyeler içinde yanıtlar, randevu ve siparişleri insan müdahalesine gerek kalmadan anında yönetirim. Kendi işletmeniz için bu sistemi kurmak isterseniz sitedeki \'Ücretsiz Keşif Al\' butonuna tıklayabilir veya 0541 875 02 88 WhatsApp hattımızdan bize ulaşabilirsiniz!';
     }
 
     // ==========================================================
@@ -523,7 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const contactWords = ['telefon', 'numara', 'whatsapp', 'yetkili', 'temsilci', 'musteri temsilcisi', 'canli destek', 'insanla gorus', 'arama', 'iletisim', 'ulas'];
     if (contactWords.some(cw => text.includes(cw))) {
-      return `Dilerseniz sizi hemen yetkili danışmanımıza yönlendirebilirim! 📞 Doğrudan görüşmek için 0541 875 02 88 numaralı resmi WhatsApp hattımıza yazabilir veya sitemizdeki iletişim formunu doldurabilirsiniz. Yetkilimize ön bilgi iletmemi ister misiniz?`;
+      return 'Dilerseniz sizi hemen yetkili danışmanımıza yönlendirebilirim! 📞 Doğrudan görüşmek için 0541 875 02 88 numaralı resmi WhatsApp hattımıza yazabilir veya sitemizdeki iletişim formunu doldurabilirsiniz. Yetkilimize ön bilgi iletmemi ister misiniz?';
     }
 
     // ==========================================================
@@ -531,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const crossSectorWords = ['baska sektor', 'tum sektor', 'farkli sektor', 'benim isletmem', 'emlak', 'gayrimenkul', 'otel', 'insaat', 'avukat', 'dis', 'kuafor', 'ajans', 'sektorler', 'baska is'];
     if (crossSectorWords.some(cs => text.includes(cs))) {
-      return `Kesinlikle evet! AutoNEX yapay zeka motoru klinik, e-ticaret, restoran, yerel hizmet, gayrimenkul, hukuk ve B2B dahil müşteriyle mesajlaşan TÜM sektörlere %100 uyumlu olarak eğitilebilmektedir. Sol menüden diğer sektör demolarını inceleyebilir veya sitenin altındaki formdan işletmenize özel teklif alabilirsiniz.`;
+      return 'Kesinlikle evet! AutoNEX yapay zeka motoru klinik, e-ticaret, restoran, yerel hizmet, gayrimenkul, hukuk ve B2B dahil müşteriyle mesajlaşan TÜM sektörlere %100 uyumlu olarak eğitilebilmektedir. Sol menüden diğer sektör demolarını inceleyebilir veya sitenin altındaki formdan işletmenize özel teklif alabilirsiniz.';
     }
 
     // ==========================================================
@@ -539,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const hourWords = ['mesai', 'acik mi', 'calisma saat', 'pazar gunu', 'hafta sonu', 'kapanis', 'kacta acik', 'kacta kapaniyor', 'tatil'];
     if (hourWords.some(hw => text.includes(hw))) {
-      return data.topics.hours || `İşletmemiz haftanın her günü çalışma saatlerinde aktiftir. Ben ise bir yapay zeka asistanı olarak 7/24 kesintisiz hizmet vermekteyim; randevu ve sorularınızı dilediğiniz an kaydedebilirim.`;
+      return data.topics.hours || 'İşletmemiz haftanın her günü çalışma saatlerinde aktiftir. Ben ise bir yapay zeka asistanı olarak 7/24 kesintisiz hizmet vermekteyim; randevu ve sorularınızı dilediğiniz an kaydedebilirim.';
     }
 
     // ==========================================================
@@ -547,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const locationWords = ['nerede', 'adres', 'konum', 'harita', 'ulasim', 'yeriniz', 'sehir', 'nasil gelirim', 'neredesiniz'];
     if (locationWords.some(lw => text.includes(lw))) {
-      return data.topics.location || `İşletmemiz ana arter üzerinde, toplu taşıma noktalarına çok yakın merkezi bir lokasyonda yer almaktadır. Dilerseniz size WhatsApp üzerinden canlı harita konumunu iletebilirim.`;
+      return data.topics.location || 'İşletmemiz ana arter üzerinde, toplu taşıma noktalarına çok yakın merkezi bir lokasyonda yer almaktadır. Dilerseniz size WhatsApp üzerinden canlı harita konumunu iletebilirim.';
     }
 
     // ==========================================================
