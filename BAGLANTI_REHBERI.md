@@ -34,14 +34,14 @@ Bu dosya, Sinan Dağ oturumu kapattıktan sonra geri döndüğünde ("Barlas, we
 
 ### 3. Adım: Turhost DNS Kayıtları (TAMAMLANDI ✅)
 - Turhost İsim Sunucuları `dns1.turhost.com` ve `dns2.turhost.com` olarak güncellendi.
-- A Kaydı (`76.76.21.21`) ve CNAME Kaydı (`cname.vercel-dns.com`) girildi.
+- A Kaydı (`216.198.79.1`) ve CNAME Kaydı (`6cc504a56949ed3f.vercel-dns-017.com`) Vercel'in özel havuzuna göre tanımlandı.
 - TRABIS yayılımı tamamlandığında `https://autonex.net.tr` otomatik SSL ile yayında olacak.
 - **Seçenek 1 (En Kolay & Otomatik SSL - Vercel / Netlify):**
   1. Vercel veya Netlify'da GitHub ile giriş yapıp `AutoNEX_Web_Sitesi` reposunu seçin ("Deploy").
   2. Domain ayarlarına `autonex.net.tr` yazın.
   3. Turhost Müşteri Paneline (`panel.turhost.com`) girin -> Alan Adları -> `autonex.net.tr` -> DNS Yönetimi:
-     - **A Kaydı:** `@` ➔ `76.76.21.21` (Vercel için)
-     - **CNAME Kaydı:** `www` ➔ `cname.vercel-dns.com` (Vercel için)
+     - **A Kaydı:** `@` ➔ `216.198.79.1` (Vercel güncel IP)
+     - **CNAME Kaydı:** `www` ➔ `6cc504a56949ed3f.vercel-dns-017.com` (Vercel özel CNAME)
   4. 5-10 dakika içinde `https://autonex.net.tr` otomatik SSL sertifikasıyla dünya çapında yayına girer.
 
 - **Seçenek 2 (Turhost Doğrudan cPanel Hosting):**
