@@ -17,20 +17,25 @@ Bu dosya, Sinan Dağ oturumu kapattıktan sonra geri döndüğünde ("Barlas, we
 - [x] **Yerel Git Reposu Kuruldu:** İlk commit atıldı (`d79f39d`).
 - [x] **GitHub Reposu Açıldı ve Push Edildi:** `https://github.com/sinandag0/AutoNEX_Web_Sitesi` (Branch: `main`).
 - [x] **E-posta & İletişim Eşleşmesi:** Sitedeki tüm resmi e-posta referansları `info@autonex.net.tr` olarak bağlandı.
+- [x] **WhatsApp İletişim Hattı Bağlandı:** `+90 541 875 02 88` numarası ana sayfa ve iletişim sayfasına bağlandı.
+- [x] **Vercel Canlı Dağıtımı:** `https://autonex-web-sitesi.vercel.app` adresinde yayında.
+- [x] **Turhost DNS & NS Yönlendirmesi:** `dns1.turhost.com` / `dns2.turhost.com` ve Vercel IP/CNAME kayıtları tamamlandı.
 
 ---
 
-## ⚡ Canlıya Alma ve Bağlantı Adımları:
+## ⚡ Canlıya Alma ve Bağlantı Durumu:
 
 ### 1. Adım: GitHub Reposu (TAMAMLANDI ✅)
 - GitHub üzerinde `AutoNEX_Web_Sitesi` reposu oluşturuldu ve kodların tamamı `main` branch'ine başarıyla push edildi.
 - Repo Adresi: `https://github.com/sinandag0/AutoNEX_Web_Sitesi`
 
-### 2. Adım: WhatsApp İletişim Numarası Bağlantısı
-- Sitedeki "7/24 WhatsApp AI Danışma Hattı" butonları için telefon numarası doğrulanacak (Varsayılan: `+90 530 875 01 88`).
-- Numara onaylandığı an `index.html` ve `iletisim.html` içindeki linkler güncellenecek.
+### 2. Adım: WhatsApp & İletişim Bağlantısı (TAMAMLANDI ✅)
+- Sitedeki "7/24 WhatsApp AI Danışma Hattı" ve telefon bağlantıları `+90 (541) 875 02 88` olarak bağlandı.
 
-### 3. Adım: Turhost DNS Kayıtlarını Girmek (autonex.net.tr ➔ Canlı Yayın)
+### 3. Adım: Turhost DNS Kayıtları (TAMAMLANDI ✅)
+- Turhost İsim Sunucuları `dns1.turhost.com` ve `dns2.turhost.com` olarak güncellendi.
+- A Kaydı (`76.76.21.21`) ve CNAME Kaydı (`cname.vercel-dns.com`) girildi.
+- TRABIS yayılımı tamamlandığında `https://autonex.net.tr` otomatik SSL ile yayında olacak.
 - **Seçenek 1 (En Kolay & Otomatik SSL - Vercel / Netlify):**
   1. Vercel veya Netlify'da GitHub ile giriş yapıp `AutoNEX_Web_Sitesi` reposunu seçin ("Deploy").
   2. Domain ayarlarına `autonex.net.tr` yazın.
