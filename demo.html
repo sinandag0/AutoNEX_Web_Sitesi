@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canlı Demo — AutoNEX | Yapay Zeka Satış Asistanı Simülatörü</title>
+  <meta name="description" content="AutoNEX yapay zeka asistanını canlı deneyin. Güzellik merkezleri, e-ticaret ve yerel hizmetler için randevu ve satış kurgularını anında test edin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo" aria-label="AutoNEX Ana Sayfa">
+          <span class="logo-auto">Auto</span><span class="logo-nex">NEX</span><span class="logo-dot"></span>
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+          <li><a href="cozumler.html" class="nav-link">Çözümlerimiz</a></li>
+          <li><a href="demo.html" class="nav-link active">Canlı Demo</a></li>
+          <li><a href="neden-autonex.html" class="nav-link">Neden AutoNEX?</a></li>
+          <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="iletisim.html" class="btn-primary" id="nav-cta-btn">
+            <span>Ücretsiz Keşif Al</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menüyü Aç/Kapa">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="ping-dot"></span>
+        <span>İNTERAKTİF TEST MERKEZİ</span>
+      </div>
+      <h1 class="page-title">Canlı Yapay Zeka <br><span class="gradient-text">Asistan Simülatörü</span></h1>
+      <p class="page-subtitle">Sözlerle değil, çalışan teknolojiyle konuşuyoruz. Aşağıdaki sektörlerden birini seçin, hazır sorulara tıklayın veya aklınıza gelen soruyu yazarak asistanımızın hızını ve doğruluğunu test edin.</p>
+    </div>
+  </section>
+
+  <!-- Dedicated Live Simulator Section -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      
+      <div class="simulator-box" id="simulator-box" style="margin-bottom: 4rem;">
+        <!-- Simulator Sidebar -->
+        <div class="sim-sidebar">
+          <div>
+            <h3 class="sim-sidebar-title">Senaryo Seçin</h3>
+            <p class="sim-sidebar-desc">İşletmenizin türüne göre asistanın nasıl davrandığını canlı test edin:</p>
+            
+            <div class="scenario-list">
+              <button class="scenario-btn active" data-scenario="clinic" id="scenario-clinic">
+                <span class="scenario-icon">✨</span>
+                <div>
+                  <strong>Güzellik & Klinik</strong>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Randevu ve Fiyat Kurgusu</div>
+                </div>
+              </button>
+
+              <button class="scenario-btn" data-scenario="ecom" id="scenario-ecom">
+                <span class="scenario-icon">🛍️</span>
+                <div>
+                  <strong>E-Ticaret & Satış</strong>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Ürün, Kargo ve Satış</div>
+                </div>
+              </button>
+
+              <button class="scenario-btn" data-scenario="service" id="scenario-service">
+                <span class="scenario-icon">🧹</span>
+                <div>
+                  <strong>Yerel Hizmet / Temizlik</strong>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Anlık Fiyat & Rezervasyon</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="sim-features-badge">
+            ⚡ <strong>AutoNEX Güvencesi:</strong> Meta Graph API ile çalışır. Asla hesap şifresi istemez, ban riski barındırmaz.
+          </div>
+        </div>
+
+        <!-- Simulator Chat Area -->
+        <div class="sim-chat-area">
+          <div class="chat-header">
+            <div class="chat-profile">
+              <div class="chat-avatar" id="sim-avatar">AN</div>
+              <div>
+                <div class="chat-name" id="sim-bot-name">AutoNEX Klinik Asistanı</div>
+                <div class="chat-status"><span class="online-dot"></span> 7/24 Çevrim İçi & Aktif</div>
+              </div>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Instagram Direct & WhatsApp</div>
+          </div>
+
+          <!-- Chat Messages Body -->
+          <div class="chat-body" id="chat-body">
+            <!-- Messages populated by app.js -->
+          </div>
+
+          <!-- Typing Indicator -->
+          <div class="typing-indicator" id="typing-indicator">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+          </div>
+
+          <!-- Quick Prompts Bar -->
+          <div class="quick-prompts" id="quick-prompts">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Chat Input Footer -->
+          <form class="chat-footer" id="chat-form">
+            <input type="text" class="chat-input" id="chat-input" placeholder="Bir mesaj yazın veya yukarıdaki hızlı sorulardan seçin..." autocomplete="off">
+            <button type="submit" class="chat-send-btn" id="chat-send" aria-label="Gönder">
+              ➤
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Simulator Technical Highlights -->
+      <div class="services-grid" style="margin-bottom: 4rem;">
+        <div class="service-card" style="padding: 2rem;">
+          <div class="card-tag">TEKNİK ÖZELLİK 01</div>
+          <h3 class="card-title" style="font-size: 1.3rem;">Bağlamsal Zeka (RAG)</h3>
+          <p class="card-desc">Klasik kalıp butonlu botlar gibi değil; cümlenin tonunu, niyetini ve önceki konuşmaları anlar. Müşterinizi robotla değil, profesyonel bir danışmanla konuşuyor gibi hissettirir.</p>
+        </div>
+
+        <div class="service-card" style="padding: 2rem;">
+          <div class="card-tag">TEKNİK ÖZELLİK 02</div>
+          <h3 class="card-title" style="font-size: 1.3rem;">Meta Resmi Webhook</h3>
+          <p class="card-desc">Sisteme Instagram işletme hesabınız tek tıkla bağlanır. Üçüncü parti güvensiz eklentiler yerine Meta'nın kurumsal sunucularıyla doğrudan konuşur.</p>
+        </div>
+
+        <div class="service-card" style="padding: 2rem;">
+          <div class="card-tag">TEKNİK ÖZELLİK 03</div>
+          <h3 class="card-title" style="font-size: 1.3rem;">48 Saatte Canlıya Alma</h3>
+          <p class="card-desc">İşletmenizin fiyat listesini ve SSS dokümanını bize iletmeniz yeterli. 48 saat içinde özel eğitilmiş asistanınız Instagram ve WhatsApp hattınızda aktif hale gelir.</p>
+        </div>
+      </div>
+
+      <!-- CTA Box -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glow); border-radius: 24px; padding: 3rem; text-align: center; box-shadow: var(--card-shadow), var(--glow-cyan);">
+        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem;">Bu Asistanı Kendi İşletmeniz İçin Kurmak İster misiniz?</h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 2rem;">İşletmenize özel ücretsiz canlı prototip hazırlayalım. Kendi fiyatlarınız ve hizmetlerinizle test edin, kararınızı öyle verin.</p>
+        <a href="iletisim.html" class="btn-primary" style="font-size: 1rem; padding: 0.9rem 2.2rem;">Hemen Ücretsiz Keşif Başlatın</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand-logo">
+            <span class="logo-auto">Auto</span><span class="logo-nex">NEX</span><span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">Autonomous Growth & Operations. İşletmeler için 7/24 çalışan otonom yapay zeka sistemleri, video fabrikaları ve satış asistanları.</p>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
+          <li><a href="cozumler.html" class="footer-link">Çözümlerimiz</a></li>
+          <li><a href="demo.html" class="footer-link">Canlı Demo</a></li>
+          <li><a href="neden-autonex.html" class="footer-link">Neden Biz?</a></li>
+          <li><a href="iletisim.html" class="footer-link">İletişim</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AutoNEX. Tüm hakları saklıdır. Autonomous Growth & Operations.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
