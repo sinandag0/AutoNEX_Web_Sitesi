@@ -648,7 +648,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. Professional E-Mail Discovery & Quote Form Handler
+  // 5. Service Card Detail Toggle Logic
+  const detailBtns = document.querySelectorAll('.btn-detail-toggle');
+  detailBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const panel = document.getElementById(targetId);
+      if (panel) {
+        const isOpen = panel.classList.contains('open');
+        panel.classList.toggle('open');
+        btn.innerHTML = isOpen 
+          ? '<span>Sistemin İşleyişini & Detayını Gör ▾</span>'
+          : '<span>Detayları Kapat ▴</span>';
+      }
+    });
+  });
+
+  // 6. Professional E-Mail Discovery & Quote Form Handler
   const leadForm = document.getElementById('lead-form');
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
