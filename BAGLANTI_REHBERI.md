@@ -15,23 +15,33 @@ Bu dosya, Sinan Dağ oturumu kapattıktan sonra geri döndüğünde ("Barlas, we
   - `style.css` — Ultra modern koyu tema, cam efekti, neon gradientler
   - `app.js` — Çoklu sektör senaryoları, typing indicator, mailto tetikleyici
 - [x] **Yerel Git Reposu Kuruldu:** İlk commit atıldı (`d79f39d`).
+- [x] **GitHub Reposu Açıldı ve Push Edildi:** `https://github.com/sinandag0/AutoNEX_Web_Sitesi` (Branch: `main`).
 - [x] **E-posta & İletişim Eşleşmesi:** Sitedeki tüm resmi e-posta referansları `info@autonex.net.tr` olarak bağlandı.
 
 ---
 
-## ⚡ Sinan Geri Döndüğünde Yapılacak 2 Hızlı Adım:
+## ⚡ Canlıya Alma ve Bağlantı Adımları:
 
-### 1. Adım: GitHub Reposunu Açıp Push Etmek
-- GitHub üzerinde `AutoNEX_Web_Sitesi` adıyla boş bir repository açılacak (veya API ile oluşturulacak).
-- `git remote add origin https://github.com/.../AutoNEX_Web_Sitesi.git`
-- `git push -u origin master`
+### 1. Adım: GitHub Reposu (TAMAMLANDI ✅)
+- GitHub üzerinde `AutoNEX_Web_Sitesi` reposu oluşturuldu ve kodların tamamı `main` branch'ine başarıyla push edildi.
+- Repo Adresi: `https://github.com/sinandag0/AutoNEX_Web_Sitesi`
 
-### 2. Adım: Turhost DNS Kayıtlarını Girmek
-- Netlify / Vercel üzerinde `autonex.net.tr` eklenecek.
-- Turhost panelinde (`panel.turhost.com/domain/autonex.net.tr`):
-  - **A Kaydı:** `@` ➔ Hosting IP Adresi
-  - **CNAME Kaydı:** `www` ➔ Hosting Alt Alan Adı
-- SSL (Let's Encrypt) 5 dakikada otomatik yeşil kilit olarak aktifleşecek.
+### 2. Adım: WhatsApp İletişim Numarası Bağlantısı
+- Sitedeki "7/24 WhatsApp AI Danışma Hattı" butonları için telefon numarası doğrulanacak (Varsayılan: `+90 530 875 01 88`).
+- Numara onaylandığı an `index.html` ve `iletisim.html` içindeki linkler güncellenecek.
+
+### 3. Adım: Turhost DNS Kayıtlarını Girmek (autonex.net.tr ➔ Canlı Yayın)
+- **Seçenek 1 (En Kolay & Otomatik SSL - Vercel / Netlify):**
+  1. Vercel veya Netlify'da GitHub ile giriş yapıp `AutoNEX_Web_Sitesi` reposunu seçin ("Deploy").
+  2. Domain ayarlarına `autonex.net.tr` yazın.
+  3. Turhost Müşteri Paneline (`panel.turhost.com`) girin -> Alan Adları -> `autonex.net.tr` -> DNS Yönetimi:
+     - **A Kaydı:** `@` ➔ `76.76.21.21` (Vercel için)
+     - **CNAME Kaydı:** `www` ➔ `cname.vercel-dns.com` (Vercel için)
+  4. 5-10 dakika içinde `https://autonex.net.tr` otomatik SSL sertifikasıyla dünya çapında yayına girer.
+
+- **Seçenek 2 (Turhost Doğrudan cPanel Hosting):**
+  Eğer Turhost'tan Linux Web Hosting paketi aldıysanız:
+  - cPanel -> Dosya Yöneticisi (File Manager) -> `public_html` klasörüne projedeki tüm dosyaları yükleyin.
 
 ---
-*Hazırlayan: Barlas (Antigravity) | Tarih: 26 Ekim 2026*
+*Hazırlayan: Barlas (Antigravity) | Güncelleme: 26 Ekim 2026*
