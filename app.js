@@ -39,23 +39,23 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'AutoNEX Klinik & Güzellik Asistanı',
       avatar: '✨',
       sector: 'Güzellik, Klinik & Estetik',
-      summary: 'lazer epilasyon, medikal cilt bakımı, bölgesel incelme ve uzman hekim randevuları',
-      welcome: 'Merhaba! Kliniğimize hoş geldiniz. 🌸 Lazer epilasyon, medikal cilt bakımı, bölgesel incelme ve güncel kampanyalarımız hakkında 7/24 bilgi alabilir veya randevunuzu hemen oluşturabilirsiniz. Size nasıl yardımcı olabilirim?',
+      summary: 'lazer epilasyon, medikal cilt bakımı, bölgesel incelme ve ücretsiz uzman analiz randevuları',
+      welcome: 'Merhaba! Kliniğimize hoş geldiniz. 🌸 Lazer epilasyon, medikal cilt bakımı, bölgesel incelme ve kişiye özel seans planlarımız hakkında 7/24 bilgi alabilir veya ücretsiz analiz randevunuzu hemen oluşturabilirsiniz. Size nasıl yardımcı olabilirim?',
       prompts: [
-        'Lazer epilasyon fiyatları nedir?',
-        'Cumartesi 14:00 randevu var mı?',
         'Cilt bakımı ne kadar sürüyor?',
+        'Fiyatlar ve seanslar nasıl belirleniyor?',
+        'Cumartesi 14:00 randevu var mı?',
         'Ağrısız mı, acı hisseder miyim?',
         'Kliniğinizin konumu nerede?'
       ],
       topics: {
-        price: 'Tüm vücut orijinal FDA onaylı buz başlıklı lazer paketimizde bu aya özel %25 indirimimiz bulunuyor! 8 seanslık komple paketimiz 8.500 TL yerine 6.400 TL. Dilerseniz size uygun bir gün için ücretsiz kıl analizi ve deneme atışı randevusu oluşturalım mı?',
+        price: 'Lazer epilasyon ve cilt bakımı fiyatlarımız; uygulama yapılacak bölgeye, seans sayısına ve danışanımızın cilt/kıl yapısına göre tamamen kişiye özel olarak belirlenmektedir 🌸 Merkezimizde seans başı ödeme kolaylığı ve dönemsel çok avantajlı paket seçeneklerimiz bulunmaktadır. Cilt ve kıl yapınızı yakından inceleyip size en uygun seans planını çıkarabilmemiz için merkezimizde tamamen ÜCRETSİZ profesyonel cilt ve kıl analizi yapıyoruz. Dilerseniz siz kahvemizi yudumlarken uzmanımızla cildinize birlikte bakalım ☕ Size uygun bir gün için ön görüşme randevusu oluşturalım mı?',
         appointment: 'Cumartesi günü saat 14:00 seansımız şu an müsait görünüyor! 📅 Adınız Soyadınız ve telefon numaranızı iletirseniz randevunuzu hemen takvime işleyip onay bildiriminizi iletiyorum.',
-        skin: 'Medikal Hydrafacial cilt bakımı protokolümüz yaklaşık 50-60 dakika sürmektedir. Vakumlu derin gözenek temizliği, siyah nokta arındırma ve hyaluronik asit nem takviyesi içerir. Tek seans 1.200 TL, 4\'lü kür 3.800 TL\'dir.',
-        skin_price: 'Hydrafacial medikal derin cilt bakımı seans ücretimiz tek seans 1.200 TL, 4 seanslık komple yenileyici kürümüz ise indirimle 3.800 TL\'dir. İşlem 50-60 dakika sürer. Randevu oluşturmak ister misiniz?',
-        laser_duration: 'Tüm vücut buz lazer seansımız ortalama 35-45 dakika sürmektedir. Kıl yapısına bağlı olarak 6-8 seansta %85-90 kalıcı pürüzsüzlük sağlanır. Ücretsiz deneme atışı randevusu ister misiniz?',
-        pain: 'Kullandığımız yeni nesil soğutmalı buz başlık teknolojisi sayesinde atışlar masaj konforunda ve sıfıra yakın acıyla gerçekleşir. İlk seanstan önce 1 dakikalık ücretsiz deneme atışı yapabiliriz.',
-        location: 'Kliniğimiz merkezi lokasyonda, ana cadde üzerinde ve metro/metrobüs durağına yalnızca 3 dakika yürüme mesafesindedir. Otoparkımız mevcuttur. Dilerseniz WhatsApp üzerinden canlı konum gönderebilirim.',
+        skin: 'Medikal Hydrafacial cilt bakımı protokolümüz ortalama 50-60 dakika sürmektedir 🌸 Vakumlu derin gözenek arındırma, siyah nokta temizliği, peeling ve cildin ihtiyacına özel hyaluronik asit/vitamin serum yüklemesi içerir. Seans sonunda cildiniz anında neme doymuş, taze ve ışıl ışıl bir görünüm kazanır ✨ Cilt tipinize en uygun protokolü belirlemek için merkezimizde ücretsiz cilt analizi yapmaktayız. Size uygun bir gün için uzmanımızla analiz randevusu planlayalım mı?',
+        skin_price: 'Medikal cilt bakımı protokollerimizde fiyatlandırma; cildin analiz sonucundaki ihtiyacına (derin gözenek temizliği, leke protokolü veya yoğun nem takviyesi) ve seans planına göre kişiye özel belirlenmektedir 🌸 Merkezimizde seans başı ödeme kolaylığı ve avantajlı kür seçeneklerimiz mevcuttur. Cildinizin neye ihtiyacı olduğunu netleştirmek için merkezimizde ücretsiz profesyonel cilt analizi yapmaktayız. Uzmanımızla cildinize birlikte bakmamız için randevu oluşturalım mı? ☕',
+        laser_duration: 'Tüm vücut buz lazer seansımız ortalama 35-45 dakika sürmektedir 🌸 Kıl yapısına bağlı olarak ortalama 6-8 seansta %85-90 kalıcı pürüzsüzlük sağlanır. Kıl yapınızı inceleyip 1 dakikalık ücretsiz deneme atışı yapmak için randevu oluşturalım mı?',
+        pain: 'Kullandığımız yeni nesil -10°C safir temaslı soğutmalı buz başlık teknolojisi sayesinde atışlar masaj konforunda ve sıfıra yakın bir hisle gerçekleşir 🌸 Cildinizin konforunu görmeniz için işlem öncesinde ücretsiz 1 dakikalık deneme atışı yapabiliyoruz.',
+        location: 'Kliniğimiz merkezi lokasyonda, ana cadde üzerinde ve metro/metrobüs durağına yalnızca 3 dakika yürüme mesafesindedir 📍 Otoparkımız mevcuttur. Dilerseniz WhatsApp üzerinden canlı konum gönderebilirim.',
         hours: 'Kliniğimiz Pazartesi - Cumartesi günleri 09:30 - 19:30 saatleri arasında açıktır. Ben ise 7/24 aktif olduğum için randevunuzu dilediğiniz an takvime işleyebilirim.'
       }
     },
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (text.includes('cilt bakimi ne kadar') || (text.includes('cilt') && text.includes('sur'))) {
         return data.topics.skin;
       }
-      if (text.includes('lazer epilasyon fiyat') || (text.includes('lazer') && (text.includes('fiyat') || text.includes('ucret') || text.includes('kampanya')))) {
+      if (text.includes('fiyatlar ve seanslar') || text.includes('nasil belirleniyor') || text.includes('lazer epilasyon seans') || text.includes('lazer epilasyon fiyat') || (text.includes('lazer') && (text.includes('fiyat') || text.includes('ucret') || text.includes('kampanya')))) {
         return data.topics.price;
       }
       if (text.includes('cumartesi 14:00') || (text.includes('randevu') && (text.includes('cumartesi') || text.includes('var mi') || text.includes('14')))) {
