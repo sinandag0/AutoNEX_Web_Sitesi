@@ -156,6 +156,7 @@ body {
   font-weight: 800;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
   text-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
@@ -329,6 +330,7 @@ body {
 .hero-title .gradient-text {
   background: var(--brand-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -387,6 +389,7 @@ body {
   font-weight: 800;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
   margin-bottom: 0.4rem;
