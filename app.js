@@ -154,12 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'Teklif ve keşif toplantısı alabilir miyim?'
       ],
       topics: {
-        setup: 'AutoNEX motoru anahtar teslim kurulur. Şirketinizin SSS, fiyat listesi ve müşteri temsilcisi operasyon kurallarını aldıktan sonra sistemi yalnızca 48 saat içinde Meta Graph API resmi onaylı şekilde canlıya alıyoruz. Yazılımcı çalıştırmanıza veya kod yazmanıza gerek kalmaz.',
+        setup: 'AutoNEX motoru anahtar teslim kurulur. Şirketinizin SSS, fiyat listesi ve müşteri temsilcisi operasyon kurallarını aldıktan sonra sistemi yalnızca 48 saat içinde Meta\'nın resmi Graph API altyapısıyla canlıya alıyoruz. Yazılımcı çalıştırmanıza veya kod yazmanıza gerek kalmaz.',
         price: 'İşletme büyüklüğünüze ve mesaj hacminize göre şeffaf sabit paketlerimiz mevcuttur: Başlangıç (Tek Kanal Instagram/WhatsApp), Büyüme (Multi-Channel + CRM Entegrasyonu) ve Kurumsal Özel AI (SLA & Özel LLM). Mesaj başına sürpriz ekstra maliyetler çıkarılmaz. Net teklif için keşif görüşmesi planlayabiliriz.',
-        crm: 'Evet! Webhook, REST API ve hazır konnektörlerimiz sayesinde HubSpot, Zoho, Salesforce, Parasut, Ticimax, IdeaSoft, Shopify ve Google Sheets dahil tüm veritabanlarınıza iki yönlü tam entegrasyon sağlıyoruz. Gelen mesajdaki lead veya sipariş anında CRM\'inize işlenir.',
-        appointment: 'Harika! 15 dakikalık ücretsiz online Google Meet keşif toplantısı planlayabiliriz 💼 Ekibimiz mevcut müşteri mesajlaşma trafiğinizi inceler ve işletmenize özel potansiyel tasarruf ve ciro artış raporunu canlı sunar. Hangi gün ve saat aralığı sizin için uygundur?',
-        sectors: 'Klinik & sağlık, yerel hizmet & temizlik, e-ticaret, gayrimenkul, otomotiv, otel & restoran, turizm ve hukuk büroları başta olmak üzere; Instagram DM, WhatsApp veya web sitesinden müşteriyle mesajlaşan TÜM sektörlere %100 uyumlu olarak eğitilebilmektedir.',
-        security: 'Veri güvenliği en yüksek önceliğimizdir 🔒 Müşteri mesajlarınız uçtan uca şifrelenir ve KVKK/GDPR standartlarına tam uyumlu olarak barındırılır. Şirketinize ait ticari veriler asla üçüncü taraf yapay zeka modellerini genel eğitmek için kullanılmaz.',
+        crm: 'Evet! Webhook, REST API ve hazır konnektörlerimiz sayesinde Google Sheets, Notion, HubSpot veya Shopify gibi sistemlere ihtiyaca göre bağlantı kuruyoruz. Hangi sisteminizle çalışacağını keşif görüşmesinde birlikte belirleriz.',
+        appointment: 'Harika! 15 dakikalık ücretsiz online Google Meet keşif toplantısı planlayabiliriz 💼 Ekibimiz mevcut müşteri mesajlaşma trafiğinizi inceler ve işletmenize nerede zaman kazandırabileceğini birlikte konuşur. Hangi gün ve saat aralığı sizin için uygundur?',
+        sectors: 'Klinik & sağlık, yerel hizmet & temizlik, e-ticaret, gayrimenkul, otomotiv, otel & restoran, turizm ve hukuk büroları başta olmak üzere; Instagram DM, WhatsApp veya web sitesinden müşteriyle mesajlaşan sektörlerin çoğuna uyarlanabilir.',
+        security: 'Veri güvenliği en yüksek önceliğimizdir 🔒 Müşteri mesajlarınız sadece asistanın çalışması için kullanılır, satılmaz ve üçüncü kişilerle paylaşılmaz. Hesabınıza şifreyle değil, Meta\'nın resmi izin ekranıyla bağlanırız.',
         handover: 'Herhangi bir anda müşteri özel bir durum belirttiğinde veya canlı bir yetkili ile görüşmek istediğinde; yapay zeka saniyeler içinde sessize geçer ve canlı temsilcinizin paneline WhatsApp/Telegram üzerinden anında alarm bildirimi düşürür.',
         hours: 'Kurumsal danışmanlık ekibimiz hafta içi 09:00 - 18:30 saatleri arasında hizmet vermektedir. AI altyapımız ise 7/24 aktiftir.'
       }
@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================
     const crossSectorWords = ['baska sektor', 'tum sektor', 'farkli sektor', 'benim isletmem', 'emlak', 'gayrimenkul', 'otel', 'insaat', 'avukat', 'dis', 'kuafor', 'ajans', 'sektorler', 'baska is'];
     if (crossSectorWords.some(cs => text.includes(cs))) {
-      return 'Kesinlikle evet! AutoNEX yapay zeka motoru klinik, e-ticaret, restoran, yerel hizmet, gayrimenkul, hukuk ve B2B dahil müşteriyle mesajlaşan TÜM sektörlere %100 uyumlu olarak eğitilebilmektedir. Sol menüden diğer sektör demolarını inceleyebilir veya sitenin altındaki formdan işletmenize özel teklif alabilirsiniz.';
+      return 'Kesinlikle evet! AutoNEX yapay zeka motoru klinik, e-ticaret, restoran, yerel hizmet, gayrimenkul, hukuk ve B2B dahil müşteriyle mesajlaşan sektörlerin çoğuna uyarlanabilir. Sol menüden diğer sektör demolarını inceleyebilir veya sitenin altındaki formdan işletmenize özel teklif alabilirsiniz.';
     }
 
     // ==========================================================
